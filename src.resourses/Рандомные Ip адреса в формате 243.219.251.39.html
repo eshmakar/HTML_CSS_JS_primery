@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>URL_ONLY + ips</title>
+</head>
+<body>
+<script type="text/javascript">
+
+    var URL_BEGIN = "<a href=http://";
+    var URL_ONLY = "http://";
+    var URL_CENTER = ">";
+    var URL_END = "</a>";
+    var tochka = ".";
+    for (let i = 1; i < 51; i++) {
+        var numbers = Math.floor((Math.random() * 180 + 64));
+        var numbers2 = Math.floor((Math.random() * 255 + 1));
+        var numbers3 = Math.floor((Math.random() * 255 + 1));
+        var numbers4 = Math.floor((Math.random() * 255 + 1));
+
+        var ips = numbers + tochka + numbers2 + tochka + numbers3 + tochka + numbers4;
+
+        // document.location.href = URL_ONLY + ips;
+
+        document.write(URL_BEGIN + ips +URL_CENTER+ips+URL_END);
+        document.write("<br>");
+    }
+
+    req = new XMLHttpRequest();
+    req.open("GET", "mail.ru", false);
+
+    // document.location.href = "http://www.site.ru";
+
+
+</script>
+
+</body>
+</html>

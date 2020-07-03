@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Learning JavaScript</title>
+    <script type="text/javascript">
+        function valid(form) { /*проверка введенных данных*/
+            var fail = false;
+            var name = form.name.value; /*обращаемся на - <input type="text" name="name" placeholder="Имя" id="name"/><br/><br/>*/
+            var pass = form.password.value;
+            var email = form.email.value;
+            var RePass = form.RePassword.value;
+            var state = form.state.value;
+
+            var adr_pattern = /[0-9a-z_-]+@[0-9a-z_-]+\.[a-z]{2,5}/i;
+            // / - открывающие, закрывающие символы, "0-9a-z_-" - либо должны быть цифры, либо буквы, тире, знак подчеркивания
+            // после этого должно присутствовать знак собачки, потом тоже самое, потом должна быть точка, потом буквы от 2 до 5
+            // i - в конце указывает, что не важен регистр
+
+
+            if (name == "" || name == " ") /*если пустое имя или только пробел*/
+                fail = "Вы не ввели свое имя!";
+            else if (pass == name)
+                fail = "Пароль не должен совпадать с именем!";
+            else if (pass == "" || pass == " ")
+                fail = "Вы не ввели пароль!";
+            else if (adr_pattern.test(email) == false)
+                fail = "Вы ввели email не правильно!";
+            else if (RePass == "" || RePass == " ")
+                fail = "Введите пароль еще раз!";
+            else if (pass != RePass)
+                fail = "Пароли не совпадают!";
+            else if (state == "")
+                fail = "Укажите пол!";
+            if (fail)
+                alert(fail);
+            else
+                window.location = "http://google.com"; //если все верно
+        }
+
+    </script>
+</head>
+<body>
+<form action="" method="post" name="test" id="form"> <!-- this - означает, что будем использовать функцию valid(form)-->
+    <label for="name">Имя:</label>
+    <input type="text" name="name" placeholder="Имя" id="name"/><br/><br/>
+    <label for="password">Пароль:</label>
+    <input type="password" name="password" placeholder="Пароль" id="password"/><br/><br/> <!--placeholder - подксказка в строке для ввода-->
+    <label for="RePassword">Проверка пароля:</label>
+    <input type="password" name="RePassword" placeholder="Пароль" id="RePassword"/><br/><br/>
+    <label for="email">Email:</label>
+    <input type="email" name="Email" placeholder="Email" id="email"/><br/><br/>
+    <span>Пол:</span>
+    <input type="radio" name="state" id="male" value="Мужской"/><label for="male">Мужской</label> <!--label for="male" - будет выбрать пол даже при нажатии на слово-->
+    <input type="radio" name="state" id="female" value="Женский"/><label for="female">Женский</label><br/>
+    <input type="button" onclick="valid(document.getElementById('form'))" value="Готово"/>
+    <!--submit - кнопка отправления (Готово)-->
+</form>
+</body>
+</html>

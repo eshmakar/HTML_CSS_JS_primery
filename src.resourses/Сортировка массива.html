@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Сортировка массива</title>
+<script type="text/javascript">
+
+    function compareNumbers(a, b) {
+        return a - b;
+    }
+
+    var massiv = new Array (6469, 1, .588, -11, 8546, 14, 2);
+    text = "Длина массива: " + massiv.length;
+    text += "\nМассив состоит из: " + massiv.join(", "); //выводит элементы массива через запятую
+    text += '\nОтсортированный массив: ' + massiv.sort(compareNumbers).join(", "); //отсортированный список
+    alert(text);
+
+</script>
+</head>
+<body>
+
+
+</body>
+</html>

@@ -1,0 +1,32 @@
+.message{
+	color:#747474;
+	background-color: #e4e4e4;
+	border: 1px solid #323232; /* выделение, то есть обводить рамкой */
+	font-size: 20px;
+	margin: 10px; /* отступы между строками */
+	padding: 15px; /* отступы после рамки */
+}
+
+.success{
+	background-color: #19a15f;
+	color: #ffffff;
+}
+
+.fail{
+background-color: #d65144;
+color: #ffffff;	
+}
+
+.info{
+	background-color: #4b8bf5;
+	color: #ffffff;
+}
+
+.warning{
+	background-color: #ffce43;
+	color: #000000;
+}
+
+.message:hover{ /* при наведении мыши на сообщение, оно увеличивается на 10пикселей */
+	border: 10px solid #323232;
+}
