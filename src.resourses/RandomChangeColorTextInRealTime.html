@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Test</title>
+</head>
+<body onload="RandomColor()">
+
+
+<!--при нажатии меняет цвет текста-->
+<p id="text">Какой-нибудь текст</p>
+<button onclick="changeColor('blue');">Синий</button>
+<button onclick="changeColor('red');">Красный</button>
+<button onclick="changeColor('grey');">Серый</button>
+<button onclick="changeColor('yellow');">Желтый</button>
+<button onclick="changeColor('white');">Белый</button>
+
+<div>
+<span id="cvet">П</span>
+<span id="cvet2">Р</span>
+<span id="cvet3">И</span>
+<span id="cvet4">В</span>
+<span id="cvet5">Е</span>
+<span id="cvet6">Т</span>
+</div>
+
+<script>
+
+    function RandomColor() {
+        var rgbNachalo = "rgb(";
+        var rgbKonec = ")";
+        var numbers = Math.floor((Math.random() * 255 + 1));
+        var numbers2 = Math.floor((Math.random() * 255 + 1));
+        var numbers3 = Math.floor((Math.random() * 255 + 1));
+
+        var numbers10 = Math.floor((Math.random() * 255 + 1));
+        var numbers20 = Math.floor((Math.random() * 255 + 1));
+        var numbers30 = Math.floor((Math.random() * 255 + 1));
+
+        var numbers100 = Math.floor((Math.random() * 255 + 1));
+        var numbers200 = Math.floor((Math.random() * 255 + 1));
+        var numbers300 = Math.floor((Math.random() * 255 + 1));
+
+        var numbers1000 = Math.floor((Math.random() * 255 + 1));
+        var numbers2000 = Math.floor((Math.random() * 255 + 1));
+        var numbers3000 = Math.floor((Math.random() * 255 + 1));
+
+        var numbers10000 = Math.floor((Math.random() * 255 + 1));
+        var numbers20000 = Math.floor((Math.random() * 255 + 1));
+        var numbers30000 = Math.floor((Math.random() * 255 + 1));
+
+        var numbers100001 = Math.floor((Math.random() * 255 + 1));
+        var numbers200001 = Math.floor((Math.random() * 255 + 1));
+        var numbers300001 = Math.floor((Math.random() * 255 + 1));
+
+
+        document.getElementById("cvet").style.color = rgbNachalo + numbers + ', ' + numbers2 + ', ' + numbers3 + rgbKonec;
+        document.getElementById("cvet2").style.color = rgbNachalo + numbers10 + ', ' + numbers20 + ', ' + numbers30 + rgbKonec;
+        document.getElementById("cvet3").style.color = rgbNachalo + numbers100 + ', ' + numbers200 + ', ' + numbers300 + rgbKonec;
+        document.getElementById("cvet4").style.color = rgbNachalo + numbers1000 + ', ' + numbers2000 + ', ' + numbers3000 + rgbKonec;
+        document.getElementById("cvet5").style.color = rgbNachalo + numbers10000 + ', ' + numbers20000 + ', ' + numbers30000 + rgbKonec;
+        document.getElementById("cvet6").style.color = rgbNachalo + numbers100001 + ', ' + numbers200001 + ', ' + numbers300001 + rgbKonec;
+        setTimeout("RandomColor()", 800);
+    }
+
+
+
+    function changeColor(ColorFromUser) {
+        var colorUser = document.getElementById("text");
+        colorUser.style.color = ColorFromUser;
+    }
+
+
+    // var name = prompt("Введите ваше имя"); //prompt - берет значение от юзера
+    // console.log("hello "+name); // console.log - выводит в консоли, юзер этого не увидет
+    // document.write("Результат: ", 15+25); //чтобы отделить переменную типа стринг от инт, можно после стринга поставить запятые
+
+
+</script>
+
+</body>
+</html>
