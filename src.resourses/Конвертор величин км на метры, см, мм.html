@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Конвертор величин на JavaScript</title>
+
+    <!--подключение готового модуля css-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <style>
+        body{
+            margin-top: 70px; /*отступы с краев*/
+            background-color: #333; /*цвет фона*/
+            color: #fff;/* цвет текста*/
+        }
+
+        .card-block {padding: 10px}/* отступ после каждого card-block*/
+    </style>
+</head>
+<body>
+
+<div class="row"></div>
+<div class="col-md-6"></div>
+<h1 class="display-3 text-center  mb-3">Конвертор величин</h1> <!--отступ после этого заголовка-->
+
+<form>
+    <div class="form-group">
+        <input type="number" id="kmInput" placeholder="Введите километры:" class="form-control form-control-lg">
+    </div>
+</form>
+<div id="output">
+    <div class="card alert-warning mb-2">
+    <div class="card-block">
+        <h4>Метры:</h4>
+        <div id="metresOutput"></div>
+    </div>
+    </div>
+
+    <div class="card alert-primary mb-2">
+        <div class="card-block">
+            <h4>Сантиметры:</h4>
+            <div id="SmOutput"></div>
+        </div>
+    </div>
+
+    <div class="card alert-success mb-2">
+    <div class="card-block">
+        <h4>Миллиметры:</h4>
+        <div id="milimetresOutput"></div>
+    </div>
+</div>
+
+
+</div>
+<script>
+
+    /*получаем элемент по id, добавляем его на прослушиватель ввода, добавляем функцию без имени18921460945161,6*/
+    document.getElementById("kmInput").addEventListener('input', function (e) {
+        let km = e.target.value;
+        document.getElementById("metresOutput").innerHTML=km*1000;
+        document.getElementById("SmOutput").innerHTML=km*1000*100;
+        document.getElementById("milimetresOutput").innerHTML=km*1000*100*100;
+
+    })
+</script>
+
+
+</body>
+</html>
